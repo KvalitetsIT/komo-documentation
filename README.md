@@ -28,7 +28,7 @@ All usecases are documented the most recent usecase document can be send on requ
 Services are created, testet and build in independant git repositories 
 
 | Service       | Description   |
-| ------------- |:-------------:|
+| ------------- |-------------|
 | [Patient-web](https://github.com/KvalitetsIT/hjemmebehandling-patient-web)       | The web application for patient |
 | [Medarbejder-web](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-web)     | The web application for employee(medarbejder) |
 | [Patient-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for patient |
@@ -53,16 +53,27 @@ The main flow is
 KoMo integrates with the following systems
 
 | Integration   | Description   | Standards | Documentation |
-| ------------- |:-------------:| -----:|-----:|
-| BSK (BrugerStamdataKatalog) | Login for employee | OIDC / SAML | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-app-chart#oauth2-oidc) - login is required to view documentation  |
-| CustomLogin | Login for patients | OIDC and Custom Rest Api | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-custom-user-service) - login is required to view documentation |
-| Audit service | Login for employee | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/Tenants/flux-kit/src/branch/master/README.md#audit-logs) - login is required to view documentation |
-| CPR service | Login for employee | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/cpr-service) - login is required to view documentation |
-
+| ------------- |-------------| -----|-----|
+| BSK (BrugerStamdataKatalog) | Is used for employee login. A JWT token containing userinformation and roles is parsed to the backend where userinformation are handled and access validated.  | OIDC / SAML | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-app-chart#oauth2-oidc) - login is required to view documentation  |
+| CustomLogin | Is used when a patient login to the system. Patient users are automatically created in the CustomUser IdP using a Rest interface. It is possible to reset the password from the employee application. |OIDC and Custom Rest| [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-custom-user-service) - login is required to view documentation |
+| Audit service | Audit service is called from employee-bff when the employee reads or writes patient data | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/Tenants/flux-kit/src/branch/master/README.md#audit-logs) - login is required to view documentation |
+| CPR service | Cpr service is used to fetch masterdata for patient. Data a fetched from a Cpr number | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/cpr-service) - login is required to view documentation |
 
 ## Model
+The model is based on [FHIR](http://www.hl7.org/fhir/). The Hapi FHIR is used for implementing the FHIR server.
 
+The following FHIR Resources are used
+ * carePlan 
+ * patient
+ * practitioner
+ * organization
+ * planDefinition
+ * questionnaire
+ * questionnaireResponse
+ * searchParameter
 
+The following extensions are used
+...
 
 ## Alarms, triage and other business rules
 
