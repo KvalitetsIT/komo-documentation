@@ -78,15 +78,15 @@ The following is a short description of the extensions
 
 | Extension       | Description   | Resources|
 | ------------- |-------------| -------------|
-| EXAMINATION_STATUS       | Is Used when a employee validates a questionnaire response. Valid values: "Ubehandlet|Behandlet" | QuestionnaireReposponse | 
+| EXAMINATION_STATUS       | Is Used when a employee validates a questionnaire response. Valid values: "Ubehandlet" or "Behandlet" | QuestionnaireReposponse | 
 | EXAMINATION_AUTHOR       | The employee who changed the questionnaire response to "Behandlet" |QuestionnaireReposponse |
 | ORGANIZATION             | All patientrelated resources are assosiated with this extension. Added to make it easier to filter in organisation | Careplan, QuestionnaireReposponse |
 | TRIAGING_CATEGORY        | Used to triage a QuestionnaireResponse. Valid values: GREEN(3), YELLOW(2), RED(1); | QuestionnaireReposponse | 
 | ACTIVITY_SATISFIED_UNTIL | When a questionnaire need to be filled the next time | Careplan/CareplanActivity | 
 | CAREPLAN_SATISFIED_UNTIL | When a questionnaire need to be filled the next time for the entire careplan | Careplan | 
 | CONTACT_RELATIONSHIP     | The Relationship of a contact  | Patient |
-| CUSTOM_USER_ID           | Used to save the userID returned by the customuser service. Example: 3cc36368-a721-4d18-b7e5-aa022fc4c07d |
-| CUSTOM_USER_NAME         | Used to save the userName returned by the customuser service. This is the username used for login. It is shown in the employee UI if the user forgets. Example: Nantes |
+| CUSTOM_USER_ID           | Used to save the userID returned by the customuser service. Example: 3cc36368-a721-4d18-b7e5-aa022fc4c07d | Patient |
+| CUSTOM_USER_NAME         | Used to save the userName returned by the customuser service. This is the username used for login. It is shown in the employee UI if the user forgets. Example: Nantes | Patient |
 | THRESHOLD                           | New resource that defines a threshold | Plandefinition, CarePlan| 
 | THRESHOLD_QUESTIONNAIRE_ITEM_LINKID | Id to the Questionnaire item that uses the threshold |Threshold|
 | THRESHOLD_TYPE                      | The different types of thresholds: NORMAL, ABNORMAL, CRITICAL |Threshold|
