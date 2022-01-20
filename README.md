@@ -25,6 +25,16 @@ All usecases are documented the most recent usecase document can be send on requ
 
 
 ## Services
+Services are created, testet and build in independant git repositories 
+
+| Service       | Description   |
+| ------------- |:-------------:|
+| [Patient-web](https://github.com/KvalitetsIT/hjemmebehandling-patient-web)       | The web application for patient |
+| [Medarbejder-web](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-web)     | The web application for employee(medarbejder) |
+| [Patient-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for patient |
+| [Medarbejder-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for medarbejder |
+| [BackendApi](https://github.com/KvalitetsIT/hjemmebehandling-hapi-fhir-server)  | A instance of a HAPI FHIR server |
+| [Web-shared](https://github.com/KvalitetsIT/hjemmebehandling-web-shared) | Shared web components|
 
 ## Technical setup
 
@@ -39,15 +49,19 @@ The main flow is
 ![Overall business architecture](images/services.png)
 
 
-
-
-
 ## Integrations
+KoMo integrates with the following systems
 
-## Test
+| Integration   | Description   | Standards | Documentation |
+| ------------- |:-------------:| -----:|-----:|
+| BSK (BrugerStamdataKatalog) | Login for employee | OIDC / SAML | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-app-chart#oauth2-oidc) - login is required to view documentation  |
+| CustomLogin | Login for patients | OIDC and Custom Rest Api | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/dias-custom-user-service) - login is required to view documentation |
+| Audit service | Login for employee | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/Tenants/flux-kit/src/branch/master/README.md#audit-logs) - login is required to view documentation |
+| CPR service | Login for employee | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/cpr-service) - login is required to view documentation |
 
 
 ## Model
+
 
 
 ## Alarms, triage and other business rules
