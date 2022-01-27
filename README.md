@@ -72,6 +72,9 @@ The following FHIR Resources are used
  * questionnaireResponse
  * searchParameter
 
+The FHIR resources relates in the following way  
+![Overall business architecture](images/KoMo-Diagram.drawio.png)
+
 A number of extensions are made to the FHIR model. All extensions can be found in [Systems.java](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff/blob/main/service/src/main/java/dk/kvalitetsit/hjemmebehandling/constants/Systems.java)
 
 The following is a short description of the extensions
@@ -94,7 +97,30 @@ The following is a short description of the extensions
 | THRESHOLD_VALUE_BOOLEAN             | Defines the value for this threshold. Used if it is a Boolean | Threshold |
 
 
-## Alarms, triage and other business rules
+## Triage and Alarm limits
+Definition:
+* Alarm limits is the configuration values and which areas are Normal, Abnormal or Critical for a given type. Alarm limits can apply both for measurements and Boolean types.
+* Triage are the actual priority for a Question / Questionnaire Response
+
+Alarm Limits are defined in Questionnaire and PlanDefinition. The Alarm Limits are
+ * NORMAL (Green)
+ * ABNORMAL (Yellow)
+ * CRITICAL (Red)
+ 
+ There can only be one Alarm limit pr. measurement type in a PlanDefinition. If multiple PlanDefinitions are added to a CarePlan, KoMo will check that there is only one Alarm Limit for a measurement type.
+ 
+Triage marks the priority of questions (a Questionnaire response typically has multiple questions) and questionnaire response (QR) as a whole.
+
+A questionnaire response (QR) is triaged on the server, using the following rules
+ 1. The question with the highest severity marks the the entire QR (eg. if one question is marked as Red => the entire QuestionnaireResponse is marked red).
+ 2. If Alarm limits apply for a given type and the given value is outside any Alarm Limits. It will be triaged as "Red".
+ 3. If no alarm limits apply, the Question / Questionnaire response is triaged Green.
+ 4. The triage of Questionnaire Response are done when submitted. The triage value is evaluated based on the Alarm limits at that given time.
+ 5. The individual Questions are evaluated when they are shown. This means the triage value relates to the most current Alarm Limit. This is done (together with 4.) to handle changing Alarm limits and, at the same documentation are done correctly.
+
+Measurements are numbered values. Measurements are shown in charts together with Alarm Limits. The Alarm Limits shown in the Charts are the most current (described in 5. above). 
+
+
 
 
 
