@@ -99,7 +99,7 @@ The following is a short description of the extensions
 
 ## Triage and Alarm limits
 Definition:
-* Alarm limits is the configuration values and which areas are Normal, Abnormal or Critical for a given type. Alarm limits can apply both for measurements and Boolean types.
+* Alarm limits are the configuration values and which areas are Normal, Abnormal or Critical for a given type. Alarm limits can apply both for measurements and Boolean types.
 * Triage are the actual priority for a Question / Questionnaire Response
 
 Alarm Limits are defined in Questionnaire and PlanDefinition. The Alarm Limits are
@@ -115,11 +115,10 @@ A questionnaire response (QR) is triaged on the server, using the following rule
  1. The question with the highest severity marks the the entire QR (eg. if one question is marked as Red => the entire QuestionnaireResponse is marked red).
  2. If Alarm limits apply for a given type and the given value is outside any Alarm Limits. It will be triaged as "Red".
  3. If no alarm limits apply, the Question / Questionnaire response is triaged Green.
- 4. The triage of Questionnaire Response are done when submitted. The triage value is evaluated based on the Alarm limits at that given time.
- 5. The individual Questions are evaluated when they are shown. This means the triage value relates to the most current Alarm Limit. This is done (together with 4.) to handle changing Alarm limits and, at the same documentation are done correctly.
+ 4. The triage of Questionnaire Response is done when submitted. The triage value is evaluated based on the Alarm limits at that given time.
+ 5. The individual Questions are evaluated when they are shown. This means the triage value relates to the most current Alarm Limit. This is done (together with 4.) to handle changing Alarm limits and, at the same time, documentation is done correctly.
 
-Measurements are numbered values. Measurements are shown in charts together with Alarm Limits. The Alarm Limits shown in the Charts are the most current (described in 5. above). 
-
+Measurements are numbered values. Measurements are shown in charts together with Alarm Limits. The Alarm Limits shown in the Charts are the most current (described in 5. above).
 
 
 
