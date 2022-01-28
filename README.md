@@ -31,7 +31,7 @@ Services are created, testet and build in independant git repositories
 | ------------- |-------------|
 | [Patient-web](https://github.com/KvalitetsIT/hjemmebehandling-patient-web)       | The web application for patient |
 | [Medarbejder-web](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-web)     | The web application for employee(medarbejder) |
-| [Patient-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for patient |
+| [Patient-BFF](https://github.com/KvalitetsIT/hjemmebehandling-patient-bff)  | Dedicated API for patient |
 | [Medarbejder-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for medarbejder |
 | [BackendApi](https://github.com/KvalitetsIT/hjemmebehandling-hapi-fhir-server)  | A instance of a HAPI FHIR server |
 | [Web-shared](https://github.com/KvalitetsIT/hjemmebehandling-web-shared) | Shared web components|
