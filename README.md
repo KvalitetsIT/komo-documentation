@@ -120,6 +120,18 @@ A questionnaire response (QR) is triaged on the server, using the following rule
 
 Measurements are numbered values. Measurements are shown in charts together with Alarm Limits. The Alarm Limits shown in the Charts are the most current (described in 5. above).
 
+## Missing questionnairereposnses
+When creating a careplan for a patient, a frequency for each questionnaire are defined by the clinician.
 
+On the front page there is a list of patients who have missed a questionnairereponse deadline.
+
+This list is recalculated when
+* A patient submits a questionnaire response
+* When a clinician alter the frequency for a existing questionnaire
+* (Patientgroups are added or removed a active careplan - not yet support)
+
+When a patient submits a questionnaire response, the next questionnairereposnse deadline is recalculated based on the date of the questionnaireresponse.
+
+When a clinician alters the frequency for an existing questionnaire, existing alarms will be removed from the list. The deadline will be re-calculaed base on the day the clinician changed the frequency.
 
 
