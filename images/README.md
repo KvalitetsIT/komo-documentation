@@ -11,7 +11,7 @@
 
 
 ## Simple domain diagram
-![Cretionflow](./KoMo-Diagram.drawio.png)
+![Cretionflow](./fhirmodel/fhirmodel.png)
 
 ## Services
 ![Cretionflow](./services.png)

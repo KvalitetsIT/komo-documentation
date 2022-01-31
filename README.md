@@ -73,7 +73,7 @@ The following FHIR Resources are used
  * searchParameter
 
 The FHIR resources relates in the following way  
-![Overall business architecture](images/KoMo-Diagram.drawio.png)
+![Overall business architecture](images/fhirmodel/fhirmodel.png)
 
 A number of extensions are made to the FHIR model. All extensions can be found in [Systems.java](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff/blob/main/service/src/main/java/dk/kvalitetsit/hjemmebehandling/constants/Systems.java)
 
