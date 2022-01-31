@@ -34,7 +34,13 @@ Services are created, testet and build in independant git repositories
 | [Patient-BFF](https://github.com/KvalitetsIT/hjemmebehandling-patient-bff)  | Dedicated API for patient |
 | [Medarbejder-BFF](https://github.com/KvalitetsIT/hjemmebehandling-medarbejder-bff)  | Dedicated API for medarbejder |
 | [BackendApi](https://github.com/KvalitetsIT/hjemmebehandling-hapi-fhir-server)  | A instance of a HAPI FHIR server |
+
+
+|Utility       | Description   |
+| ------------- |-------------|
 | [Web-shared](https://github.com/KvalitetsIT/hjemmebehandling-web-shared) | Shared web components|
+| [Compose](https://github.com/KvalitetsIT/hjemmebehandling-compose) | Docker-compose setup for running medarbejder|
+
 
 ## Technical setup
 
