@@ -118,6 +118,7 @@ A questionnaire response (QR) is triaged on the server, using the following rule
  4. The triage of Questionnaire Response is done when submitted. The triage value is evaluated based on the Alarm limits at that given time.
  5. The individual Questions are evaluated when they are shown. This means the triage value relates to the most current Alarm Limit. This is done (together with 4.) to handle changing Alarm limits and, at the same time, documentation is done correctly.
 
+A Flow chart triage can be found [here](https://github.com/KvalitetsIT/komo-documentation/tree/main/images#triagerings-algorithm).
 Measurements are numbered values. Measurements are shown in charts together with Alarm Limits. The Alarm Limits shown in the Charts are the most current (described in 5. above).
 
 ## Missing questionnairereponses
