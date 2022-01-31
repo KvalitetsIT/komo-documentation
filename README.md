@@ -59,6 +59,8 @@ KoMo integrates with the following systems
 | Audit service | Audit service is called from employee-bff when the employee reads or writes patient data | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/Tenants/flux-kit/src/branch/master/README.md#audit-logs) - login is required to view documentation |
 | CPR service | Cpr service is used to fetch master data for the patient. Data a fetched from a Cpr number | Custom Rest | [DIAS documentation](https://git.base.dias.rm.dk/DIAS/cpr-service) - login is required to view documentation |
 
+Users are created in customLogin when a careplan is created. The flow can be found [here](images/creationflow/creationflow.png)
+
 ## Model
 The model is based on [FHIR](http://www.hl7.org/fhir/). All documentation of FHIR resources can be found at the HL7 website. 
 
