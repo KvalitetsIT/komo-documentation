@@ -134,13 +134,14 @@ When creating a careplan for a patient, a frequency for each questionnaire are d
 
 On the front page there is a list of patients who have missed a questionnairereponse deadline.
 
-This list is recalculated when
-* A patient submits a questionnaire response
-* When a clinician alter the frequency for a existing questionnaire
-* (Patientgroups are added or removed a active careplan - not yet support)
+Definitions:
+ - SatisfiedUntil: when the next blue alarm appear (deadline for response)
+ - Recalculation: Calculates the next "satisfiedUntil" (when is the next time there is a deadline)
 
-When a patient submits a questionnaire response, the next questionnairereposnse deadline is recalculated based on the date of the questionnaireresponse.
-
-When a clinician alters the frequency for an existing questionnaire, existing alarms will be removed from the list. The deadline will be re-calculaed base on the day the clinician changed the frequency.
-
-
+The following detailed rules apply
+ * A questionnaire is submitted on a day (before 11 o'clock) where "satisfiedUntil" is set. A recalculation is executed.
+ * A questionnaire is submitted on a day (after 11 o'clock) where "satisfiedUntil" is set. Then a recalculation is not executed.
+ * If a questionnaire is submitted on a day when "satisfiedUntil" is NOT set. Then a recalculation is not executed.
+ * If a clinician click "remove alarm", a recalculation is executed
+ * Blue alarms appear after 11 o'clock on "satisfiedUntil" days.
+ * If the frequency is changed, a recalculation is executed.
