@@ -141,7 +141,7 @@ Definitions:
 The following detailed rules apply
  * A questionnaire is submitted on a day (before 11 o'clock) where "satisfiedUntil" is set. A recalculation is executed.
  * A questionnaire is submitted on a day (after 11 o'clock) where "satisfiedUntil" is set. Then a recalculation is not executed.
- * If a questionnaire is submitted on a day when "satisfiedUntil" is NOT set. Then a recalculation is not executed.
+ * If a questionnaire is submitted on a day where "satisfiedUntil" is NOT set. Then a recalculation is not executed.
  * If a clinician click "remove alarm", a recalculation is executed
  * Blue alarms appear after 11 o'clock on "satisfiedUntil" days.
  * If the frequency is changed, a recalculation is executed.
