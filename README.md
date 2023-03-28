@@ -138,13 +138,19 @@ Definitions:
  - SatisfiedUntil: when the next blue alarm appear (deadline for response)
  - Recalculation: Calculates the next "satisfiedUntil" (when is the next time there is a deadline)
 
-The following detailed rules apply
- * A questionnaire is submitted on a day (before 11 o'clock) where "satisfiedUntil" is set. A recalculation is executed.
- * A questionnaire is submitted on a day (after 11 o'clock) where "satisfiedUntil" is set. Then a recalculation is not executed.
- * If a questionnaire is submitted on a day where "satisfiedUntil" is NOT set. Then a recalculation is not executed.
- * If a clinician click "remove alarm", a recalculation is executed
- * If the frequency is changed, recalculating is based on following rules:
-   * if 'today' is a scheduled day and the change is made before deadline (11 o'clock), then the chronologically first date between current 'satisfiedUntil' and current day is returned (to avoid a temporary removal of the blue alarm)
-   * if 'today' is not a scheduled day, then a normal recalculation is executed.
+The following detailed rules apply:
+### Patient
+ * If a questionnaire is submitted on a scheduled day before deadline (11 o'clock), a recalculation is executed.
+ * If a questionnaire is submitted on a scheduled day after deadline (11 o'clock), then a recalculation is not executed.
+ * If a questionnaire is submitted on a non-scheduled day, then a recalculation is not executed.
+
+### Clinician
+ * On "remove alarm", a recalculation is executed
+ * On "frequency changed", a recalculation is based on following rules:
+   * if 'today' is among the scheduled days and the change is made before deadline (11 o'clock), then the previous scheduled deadline is calculated and compared to the current 'satisfiedUntil':
+     * if 'current SatisfiedUntil' is after 'previous calculated deadline', the current SatisfiedUntil is used (the Patient must have submitted a questionnaire earlier 'today') 
+     * otherwise the calculated 'previous scheduled deadline' is used (to avoid a temporary removal of the blue alarm)
+   * if 'today' is among the scheduled days but the change is made after deadline (11 o'clock), then a recalculation is executed.
+   * if 'today' is not among the scheduled days, then a recalculation is executed.
  * Blue alarms appear after 11 o'clock on "satisfiedUntil" days.
  
