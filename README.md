@@ -148,8 +148,10 @@ The following detailed rules apply:
  * On "remove alarm", a recalculation is executed
  * On "frequency changed", a recalculation is based on following rules:
    * if 'today' is among the scheduled days and the change is made before deadline (11 o'clock), then the previous scheduled deadline is calculated and compared to the current 'satisfiedUntil':
-     * if 'current SatisfiedUntil' is after 'previous calculated deadline', the current SatisfiedUntil is used (the Patient must have submitted a questionnaire earlier 'today') 
-     * otherwise the calculated 'previous scheduled deadline' is used (to avoid a temporary removal of the blue alarm)
+     * if 'current SatisfiedUntil' is after 'previous scheduled deadline'..
+       * and the patient have submitted a questionnaire earlier 'today', then a recalculation is executed.
+       * and the patient have not submitted a questionnaire earlier 'today', the 'previous scheduled deadline' is used (to avoid a temporary removal of the blue alarm).
+     * otherwise the 'previous scheduled deadline' is used (to avoid a temporary removal of the blue alarm)
    * if 'today' is among the scheduled days but the change is made after deadline (11 o'clock), then a recalculation is executed.
    * if 'today' is not among the scheduled days, then a recalculation is executed.
  * Blue alarms appear after 11 o'clock on "satisfiedUntil" days.
